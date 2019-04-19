@@ -83,3 +83,16 @@ map %>%
 
 `addCircleMarkers()` function alllows the customization of the pinpoint location on the map.
 
+``` R
+leaflet()  %>% 
+  addTiles(group = "OSM") %>%
+  addProviderTiles("Esri", group = "Esri")  %>% 
+  addProviderTiles("CartoDB", group = "CartoDB") %>%
+  setView(lng = -118.4452, lat = 34.0689, zoom = 14) %>%
+  addCircleMarkers(lng = -118.4452, lat = 34.0689,
+             popup = "UCLA", radius = 3, color = 'red') %>%
+  addLayersControl(baseGroups = c("OSM", "Carto", "Esri"))
+```
+![Rplot01](https://user-images.githubusercontent.com/42131127/56412341-9e989080-6238-11e9-9ff5-965bf7bf6ca4.png)
+
+Add in multiple tile options on the Leaflet map.
