@@ -18,6 +18,7 @@ Some useful packages currently on file are:
 
 ### Leaflet
 Used for Interactive Map Visualization
+
 **Example:**
 ``` R
 names(providers) 
