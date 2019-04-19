@@ -39,7 +39,7 @@ leaflet() %>%
 ```
 ![Rplot01](https://user-images.githubusercontent.com/42131127/56390107-18506000-61e0-11e9-8681-757aa57898ee.png)
 
-** New York
+**New York**
 ``` R
 leaflet()  %>% 
   addProviderTiles("CartoDB")  %>% 
@@ -53,7 +53,7 @@ leaflet()  %>%
 
 The function `setMaxBounds` sets a boundary on the map even though the function allows dragging.
 
-** UCLA
+**UCLA**
 ``` R
 map <- leaflet()  %>% 
   addProviderTiles("Esri")  %>% 
