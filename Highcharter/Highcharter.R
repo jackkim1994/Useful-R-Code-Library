@@ -5,6 +5,12 @@ library(highcharter)
 library(quantmod)
 library(tibble)
 
+ # Import the data
+  stock_wide_tibble_prices <- as.data.frame(stock_prices_xts)
+  stock_tidy_tibble_prices <- read_csv("stock_prices.csv")
+  stock_wide_tibble_returns <- read_csv("stock_returns.csv")
+
+
 import_stock_xts <- function(stock, src = 'yahoo') {
   df <- getSymbols(stock, src = src, env = NULL)
   names(df) <- c("Open", "High", "Low", "Close", "Volume", "Adjusted")
@@ -73,12 +79,6 @@ highchart(type = "stock") %>%
                "{point.seriess.name}:
              $ {point.y: .2f}") %>%
   hc_legend(enabled = TRUE)
-
-  
-  # Import the data
-  stock_wide_tibble_prices <- read_csv("stock_prices_xts.csv")
-  stock_tidy_tibble_prices <- read_csv("stock_prices.csv")
-  stock_tidy_tibble_returns <- read_csv("stock_returns.csv")
   
   # Visualize Multiple Stocks as line charts
   # Converting from xts data object to tibble object
