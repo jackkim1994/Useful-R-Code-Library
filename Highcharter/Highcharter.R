@@ -6,10 +6,9 @@ library(quantmod)
 library(tibble)
 
  # Import the data
-  stock_wide_tibble_prices <- read_csv("stock_prices_xts.csv")
-  stock_prices_xts <- stock_wide_tibble_prices
+  stock_wide_tibble_prices <- as.data.frame(stock_prices_xts)
   stock_tidy_tibble_prices <- read_csv("stock_prices.csv")
-  stock_tidy_tibble_returns <- read_csv("stock_returns.csv")
+  stock_wide_tibble_returns <- read_csv("stock_returns.csv")
 
 
 import_stock_xts <- function(stock, src = 'yahoo') {
